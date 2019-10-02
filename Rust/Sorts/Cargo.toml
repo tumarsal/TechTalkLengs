@@ -1,0 +1,8 @@
+[package]
+name = "Sorts"
+version = "0.1.0"
+authors = ["marat.tukhbatullin <marat.tukhbatullin@mera.com>"]
+edition = "2018"
+
+[dependencies]
+serde_json = "1.0"

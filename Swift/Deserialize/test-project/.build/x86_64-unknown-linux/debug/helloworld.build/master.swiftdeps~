@@ -1,0 +1,5 @@
+version: "Swift version 4.2.4 (swift-4.2.4-RELEASE)"
+options: "0ca2ba3fc2243300ae3d66eb0d930898"
+build_time: [1569833999, 881523700]
+inputs:
+  "/workspaces/vscode-dev-containers/containers/swift-4/test-project/Sources/main.swift": [1569833997, 0]

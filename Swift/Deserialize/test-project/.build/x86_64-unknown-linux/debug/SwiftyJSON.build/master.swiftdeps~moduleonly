@@ -1,0 +1,5 @@
+version: "Swift version 4.2.4 (swift-4.2.4-RELEASE)"
+options: "a2f6e0567af37e04e63725c8885f98ea"
+build_time: [1569833950, 56942700]
+inputs:
+  "/workspaces/vscode-dev-containers/containers/swift-4/test-project/.build/checkouts/SwiftyJSON.git--866197762584714801/Source/SwiftyJSON.swift": [1569833949, 0]

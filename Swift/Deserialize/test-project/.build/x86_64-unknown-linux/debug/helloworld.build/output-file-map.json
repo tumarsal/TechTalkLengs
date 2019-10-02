@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "/workspaces/vscode-dev-containers/containers/swift-4/test-project/.build/x86_64-unknown-linux/debug/helloworld.build/master.swiftdeps"
+  },
+  "/workspaces/vscode-dev-containers/containers/swift-4/test-project/Sources/main.swift": {
+    "dependencies": "/workspaces/vscode-dev-containers/containers/swift-4/test-project/.build/x86_64-unknown-linux/debug/helloworld.build/main.d",
+    "object": "/workspaces/vscode-dev-containers/containers/swift-4/test-project/.build/x86_64-unknown-linux/debug/helloworld.build/main.swift.o",
+    "swiftmodule": "/workspaces/vscode-dev-containers/containers/swift-4/test-project/.build/x86_64-unknown-linux/debug/helloworld.build/main~partial.swiftmodule",
+    "swift-dependencies": "/workspaces/vscode-dev-containers/containers/swift-4/test-project/.build/x86_64-unknown-linux/debug/helloworld.build/main.swiftdeps"
+  }
+}

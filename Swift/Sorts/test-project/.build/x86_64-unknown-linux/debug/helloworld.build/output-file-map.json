@@ -1,0 +1,17 @@
+{
+  "": {
+    "swift-dependencies": "/workspaces/Sorts/test-project/.build/x86_64-unknown-linux/debug/helloworld.build/master.swiftdeps"
+  },
+  "/workspaces/Sorts/test-project/Sources/main.swift": {
+    "dependencies": "/workspaces/Sorts/test-project/.build/x86_64-unknown-linux/debug/helloworld.build/main.d",
+    "object": "/workspaces/Sorts/test-project/.build/x86_64-unknown-linux/debug/helloworld.build/main.swift.o",
+    "swiftmodule": "/workspaces/Sorts/test-project/.build/x86_64-unknown-linux/debug/helloworld.build/main~partial.swiftmodule",
+    "swift-dependencies": "/workspaces/Sorts/test-project/.build/x86_64-unknown-linux/debug/helloworld.build/main.swiftdeps"
+  },
+  "/workspaces/Sorts/test-project/Sources/test.swift": {
+    "dependencies": "/workspaces/Sorts/test-project/.build/x86_64-unknown-linux/debug/helloworld.build/test.d",
+    "object": "/workspaces/Sorts/test-project/.build/x86_64-unknown-linux/debug/helloworld.build/test.swift.o",
+    "swiftmodule": "/workspaces/Sorts/test-project/.build/x86_64-unknown-linux/debug/helloworld.build/test~partial.swiftmodule",
+    "swift-dependencies": "/workspaces/Sorts/test-project/.build/x86_64-unknown-linux/debug/helloworld.build/test.swiftdeps"
+  }
+}

@@ -1,0 +1,6 @@
+version: "Swift version 4.2.4 (swift-4.2.4-RELEASE)"
+options: "c2d25d9a3cda7df2e5828ac852e4a43d"
+build_time: [1569922307, 599724600]
+inputs:
+  "/workspaces/Sorts/test-project/Sources/main.swift": [1569922305, 0]
+  "/workspaces/Sorts/test-project/Sources/test.swift": [1569921758, 0]
