@@ -86,10 +86,20 @@ where
 }
 
 
-fn main(){
-    let mut v:Vec<i64> = vec![4, 6, 8, 1, 0, 3, 2, 2, 9, 5];
-    //heap_sort(&mut v, |x, y| x < y);
-    quick_sort(&mut v,&|x, y| x < y);
-    bubble_sort(&mut v);
+fn main()
 
+    //bable sort
+    let mut vec:Vec<i64> = vec![1, 5, 10, 2, 15];
+    bubble_sort(&mut vec);
+    println!("{}",vec[0]);{
+    /*quick sort */
+    let mut vector:Vec<i64> = vec![4, 6, 8, 1, 0, 3, 2, 2, 9, 5];
+    //heap_sort(&mut v, |x, y| x < y);
+    quick_sort(&mut vector,&|x, y| x < y);
+    bubble_sort(&mut vector);
+    /* */
+    //heap sort
+    let mut v = [4, 6, 8, 1, 0, 3, 2, 2, 9, 5];
+    heap_sort(&mut v, |x, y| x < y);
+    println!("{:?}", v);
 }
