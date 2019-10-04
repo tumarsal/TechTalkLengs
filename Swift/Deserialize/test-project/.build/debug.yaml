@@ -2,63 +2,41 @@ client:
   name: swift-build
 tools: {}
 targets:
-  "main": ["/workspaces/vscode-dev-containers/containers/swift-4/test-project/.build/x86_64-unknown-linux/debug/SwiftyJSON.swiftmodule","/workspaces/vscode-dev-containers/containers/swift-4/test-project/.build/x86_64-unknown-linux/debug/helloworld","/workspaces/vscode-dev-containers/containers/swift-4/test-project/.build/x86_64-unknown-linux/debug/helloworld.swiftmodule","<SwiftyJSON.module>","<helloworld.exe>","<helloworld.module>"]
-  "test": ["/workspaces/vscode-dev-containers/containers/swift-4/test-project/.build/x86_64-unknown-linux/debug/SwiftyJSON.swiftmodule","/workspaces/vscode-dev-containers/containers/swift-4/test-project/.build/x86_64-unknown-linux/debug/helloworld","/workspaces/vscode-dev-containers/containers/swift-4/test-project/.build/x86_64-unknown-linux/debug/helloworld.swiftmodule","<SwiftyJSON.module>","<helloworld.exe>","<helloworld.module>"]
-  "SwiftyJSON.module": ["/workspaces/vscode-dev-containers/containers/swift-4/test-project/.build/x86_64-unknown-linux/debug/SwiftyJSON.swiftmodule","<SwiftyJSON.module>"]
-  "helloworld.exe": ["/workspaces/vscode-dev-containers/containers/swift-4/test-project/.build/x86_64-unknown-linux/debug/helloworld","<helloworld.exe>"]
-  "helloworld.module": ["/workspaces/vscode-dev-containers/containers/swift-4/test-project/.build/x86_64-unknown-linux/debug/helloworld.swiftmodule","<helloworld.module>"]
+  "main": ["/workspaces/TechTalkLengs/Swift/Deserialize/test-project/.build/x86_64-unknown-linux/debug/helloworld","/workspaces/TechTalkLengs/Swift/Deserialize/test-project/.build/x86_64-unknown-linux/debug/helloworld.swiftmodule","<helloworld.exe>","<helloworld.module>"]
+  "test": ["/workspaces/TechTalkLengs/Swift/Deserialize/test-project/.build/x86_64-unknown-linux/debug/helloworld","/workspaces/TechTalkLengs/Swift/Deserialize/test-project/.build/x86_64-unknown-linux/debug/helloworld.swiftmodule","<helloworld.exe>","<helloworld.module>"]
+  "helloworld.exe": ["/workspaces/TechTalkLengs/Swift/Deserialize/test-project/.build/x86_64-unknown-linux/debug/helloworld","<helloworld.exe>"]
+  "helloworld.module": ["/workspaces/TechTalkLengs/Swift/Deserialize/test-project/.build/x86_64-unknown-linux/debug/helloworld.swiftmodule","<helloworld.module>"]
 default: "main"
 commands: 
-  "<C.SwiftyJSON.module>":
-    tool: phony
-    inputs: ["/workspaces/vscode-dev-containers/containers/swift-4/test-project/.build/x86_64-unknown-linux/debug/SwiftyJSON.swiftmodule"]
-    outputs: ["<SwiftyJSON.module>"]
-
   "<C.helloworld.exe>":
     tool: phony
-    inputs: ["/workspaces/vscode-dev-containers/containers/swift-4/test-project/.build/x86_64-unknown-linux/debug/helloworld"]
+    inputs: ["/workspaces/TechTalkLengs/Swift/Deserialize/test-project/.build/x86_64-unknown-linux/debug/helloworld"]
     outputs: ["<helloworld.exe>"]
 
   "<C.helloworld.module>":
     tool: phony
-    inputs: ["/workspaces/vscode-dev-containers/containers/swift-4/test-project/.build/x86_64-unknown-linux/debug/helloworld.swiftmodule"]
+    inputs: ["/workspaces/TechTalkLengs/Swift/Deserialize/test-project/.build/x86_64-unknown-linux/debug/helloworld.swiftmodule"]
     outputs: ["<helloworld.module>"]
-
-  "C.SwiftyJSON.module":
-    tool: swift-compiler
-    executable: "/usr/bin/swiftc"
-    module-name: "SwiftyJSON"
-    module-output-path: "/workspaces/vscode-dev-containers/containers/swift-4/test-project/.build/x86_64-unknown-linux/debug/SwiftyJSON.swiftmodule"
-    inputs: ["/workspaces/vscode-dev-containers/containers/swift-4/test-project/.build/checkouts/SwiftyJSON.git--866197762584714801/Source/SwiftyJSON.swift"]
-    outputs: ["/workspaces/vscode-dev-containers/containers/swift-4/test-project/.build/x86_64-unknown-linux/debug/SwiftyJSON.build/SwiftyJSON.swift.o","/workspaces/vscode-dev-containers/containers/swift-4/test-project/.build/x86_64-unknown-linux/debug/SwiftyJSON.swiftmodule"]
-    import-paths: ["/workspaces/vscode-dev-containers/containers/swift-4/test-project/.build/x86_64-unknown-linux/debug"]
-    temps-path: "/workspaces/vscode-dev-containers/containers/swift-4/test-project/.build/x86_64-unknown-linux/debug/SwiftyJSON.build"
-    objects: ["/workspaces/vscode-dev-containers/containers/swift-4/test-project/.build/x86_64-unknown-linux/debug/SwiftyJSON.build/SwiftyJSON.swift.o"]
-    other-args: ["-swift-version","3","-enable-batch-mode","-target","x86_64-unknown-linux","-sdk","/","-Onone","-g","-enable-testing","-j2","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/workspaces/vscode-dev-containers/containers/swift-4/test-project/.build/x86_64-unknown-linux/debug/ModuleCache","-Xfrontend","-color-diagnostics"]
-    sources: ["/workspaces/vscode-dev-containers/containers/swift-4/test-project/.build/checkouts/SwiftyJSON.git--866197762584714801/Source/SwiftyJSON.swift"]
-    is-library: true
-    enable-whole-module-optimization: false
-    num-threads: "2"
 
   "C.helloworld.exe":
     tool: shell
     description: "Linking ./.build/x86_64-unknown-linux/debug/helloworld"
-    inputs: ["/workspaces/vscode-dev-containers/containers/swift-4/test-project/.build/x86_64-unknown-linux/debug/SwiftyJSON.build/SwiftyJSON.swift.o","/workspaces/vscode-dev-containers/containers/swift-4/test-project/.build/x86_64-unknown-linux/debug/helloworld.build/main.swift.o"]
-    outputs: ["/workspaces/vscode-dev-containers/containers/swift-4/test-project/.build/x86_64-unknown-linux/debug/helloworld"]
-    args: ["/usr/bin/swiftc","-target","x86_64-unknown-linux","-sdk","/","-g","-L","/workspaces/vscode-dev-containers/containers/swift-4/test-project/.build/x86_64-unknown-linux/debug","-o","/workspaces/vscode-dev-containers/containers/swift-4/test-project/.build/x86_64-unknown-linux/debug/helloworld","-module-name","helloworld","-emit-executable","-Xlinker","-rpath=$ORIGIN","@/workspaces/vscode-dev-containers/containers/swift-4/test-project/.build/x86_64-unknown-linux/debug/helloworld.product/Objects.LinkFileList"]
+    inputs: ["/workspaces/TechTalkLengs/Swift/Deserialize/test-project/.build/x86_64-unknown-linux/debug/helloworld.build/main.swift.o"]
+    outputs: ["/workspaces/TechTalkLengs/Swift/Deserialize/test-project/.build/x86_64-unknown-linux/debug/helloworld"]
+    args: ["/usr/bin/swiftc","-target","x86_64-unknown-linux","-sdk","/","-g","-L","/workspaces/TechTalkLengs/Swift/Deserialize/test-project/.build/x86_64-unknown-linux/debug","-o","/workspaces/TechTalkLengs/Swift/Deserialize/test-project/.build/x86_64-unknown-linux/debug/helloworld","-module-name","helloworld","-emit-executable","-Xlinker","-rpath=$ORIGIN","@/workspaces/TechTalkLengs/Swift/Deserialize/test-project/.build/x86_64-unknown-linux/debug/helloworld.product/Objects.LinkFileList"]
 
   "C.helloworld.module":
     tool: swift-compiler
     executable: "/usr/bin/swiftc"
     module-name: "helloworld"
-    module-output-path: "/workspaces/vscode-dev-containers/containers/swift-4/test-project/.build/x86_64-unknown-linux/debug/helloworld.swiftmodule"
-    inputs: ["/workspaces/vscode-dev-containers/containers/swift-4/test-project/.build/x86_64-unknown-linux/debug/SwiftyJSON.swiftmodule","/workspaces/vscode-dev-containers/containers/swift-4/test-project/Sources/main.swift"]
-    outputs: ["/workspaces/vscode-dev-containers/containers/swift-4/test-project/.build/x86_64-unknown-linux/debug/helloworld.build/main.swift.o","/workspaces/vscode-dev-containers/containers/swift-4/test-project/.build/x86_64-unknown-linux/debug/helloworld.swiftmodule"]
-    import-paths: ["/workspaces/vscode-dev-containers/containers/swift-4/test-project/.build/x86_64-unknown-linux/debug"]
-    temps-path: "/workspaces/vscode-dev-containers/containers/swift-4/test-project/.build/x86_64-unknown-linux/debug/helloworld.build"
-    objects: ["/workspaces/vscode-dev-containers/containers/swift-4/test-project/.build/x86_64-unknown-linux/debug/helloworld.build/main.swift.o"]
-    other-args: ["-swift-version","3","-enable-batch-mode","-target","x86_64-unknown-linux","-sdk","/","-Onone","-g","-enable-testing","-j2","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/workspaces/vscode-dev-containers/containers/swift-4/test-project/.build/x86_64-unknown-linux/debug/ModuleCache","-Xfrontend","-color-diagnostics"]
-    sources: ["/workspaces/vscode-dev-containers/containers/swift-4/test-project/Sources/main.swift"]
+    module-output-path: "/workspaces/TechTalkLengs/Swift/Deserialize/test-project/.build/x86_64-unknown-linux/debug/helloworld.swiftmodule"
+    inputs: ["/workspaces/TechTalkLengs/Swift/Deserialize/test-project/Sources/main.swift"]
+    outputs: ["/workspaces/TechTalkLengs/Swift/Deserialize/test-project/.build/x86_64-unknown-linux/debug/helloworld.build/main.swift.o","/workspaces/TechTalkLengs/Swift/Deserialize/test-project/.build/x86_64-unknown-linux/debug/helloworld.swiftmodule"]
+    import-paths: ["/workspaces/TechTalkLengs/Swift/Deserialize/test-project/.build/x86_64-unknown-linux/debug"]
+    temps-path: "/workspaces/TechTalkLengs/Swift/Deserialize/test-project/.build/x86_64-unknown-linux/debug/helloworld.build"
+    objects: ["/workspaces/TechTalkLengs/Swift/Deserialize/test-project/.build/x86_64-unknown-linux/debug/helloworld.build/main.swift.o"]
+    other-args: ["-swift-version","3","-enable-batch-mode","-target","x86_64-unknown-linux","-sdk","/","-Onone","-g","-enable-testing","-j2","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/workspaces/TechTalkLengs/Swift/Deserialize/test-project/.build/x86_64-unknown-linux/debug/ModuleCache","-Xfrontend","-color-diagnostics"]
+    sources: ["/workspaces/TechTalkLengs/Swift/Deserialize/test-project/Sources/main.swift"]
     is-library: false
     enable-whole-module-optimization: false
     num-threads: "2"

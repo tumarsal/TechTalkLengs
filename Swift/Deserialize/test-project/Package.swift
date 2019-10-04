@@ -12,6 +12,6 @@ let package = Package(
         Target(name:"helloworld")
     ],
      dependencies: [
-        .Package(url: "https://github.com/SwiftyJSON/SwiftyJSON.git", majorVersion: 4)
+        //.Package(url: "https://github.com/SwiftyJSON/SwiftyJSON.git", majorVersion: 4)
     ]
 )

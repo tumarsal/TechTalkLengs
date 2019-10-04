@@ -44,8 +44,6 @@ depends-member:
 - !private ["SH", "init"]
 - ["10helloworld4ItemC", "init"]
 - ["10helloworld4ItemC", "item"]
-- !private ["10SwiftyJSON17JSONSubscriptTypeP", "init"]
-- !private ["10SwiftyJSON17JSONSubscriptTypeP", "init"]
 - !private ["s25LosslessStringConvertibleP", "init"]
 - !private ["s25LosslessStringConvertibleP", "init"]
 - !private ["s10MirrorPathP", "init"]
@@ -62,8 +60,6 @@ depends-member:
 - !private ["s16TextOutputStreamP", "init"]
 - !private ["s20TextOutputStreamableP", "init"]
 - !private ["s20TextOutputStreamableP", "init"]
-- !private ["10Foundation13_CFBridgeableP", "init"]
-- !private ["10Foundation13_CFBridgeableP", "init"]
 - !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
 - !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
 - !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
@@ -74,10 +70,6 @@ depends-member:
 - !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
 - !private ["s33_ExpressibleByStringInterpolationP", "init"]
 - !private ["s33_ExpressibleByStringInterpolationP", "init"]
-- !private ["10Foundation13_NSBridgeableP", "init"]
-- !private ["10Foundation13_NSBridgeableP", "init"]
-- !private ["s21_ObjectiveCBridgeableP", "init"]
-- !private ["s21_ObjectiveCBridgeableP", "init"]
 - !private ["s16_SwiftStringViewP", "init"]
 - !private ["s16_SwiftStringViewP", "init"]
 depends-nominal:
@@ -96,7 +88,6 @@ depends-nominal:
 - !private "s33ExpressibleByUnicodeScalarLiteralP"
 - !private "SH"
 - "10helloworld4ItemC"
-- !private "10SwiftyJSON17JSONSubscriptTypeP"
 - !private "s25LosslessStringConvertibleP"
 - !private "s10MirrorPathP"
 - !private "Sm"
@@ -105,22 +96,15 @@ depends-nominal:
 - !private "Sy"
 - !private "s16TextOutputStreamP"
 - !private "s20TextOutputStreamableP"
-- !private "10Foundation13_CFBridgeableP"
 - !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
 - !private "s34_ExpressibleByBuiltinStringLiteralP"
 - !private "s39_ExpressibleByBuiltinUTF16StringLiteralP"
 - !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
 - !private "s33_ExpressibleByStringInterpolationP"
-- !private "10Foundation13_NSBridgeableP"
-- !private "s21_ObjectiveCBridgeableP"
 - !private "s16_SwiftStringViewP"
 depends-dynamic-lookup:
 depends-external:
-- "/workspaces/vscode-dev-containers/containers/swift-4/test-project/.build/x86_64-unknown-linux/debug/SwiftyJSON.swiftmodule"
-- "/usr/lib/swift/linux/x86_64/Glibc.swiftmodule"
-- "/usr/lib/swift/linux/x86_64/Dispatch.swiftmodule"
-- "/usr/lib/swift/linux/x86_64/Foundation.swiftmodule"
 - "/usr/lib/swift/linux/x86_64/Swift.swiftmodule"
 - "/usr/lib/swift/linux/x86_64/SwiftOnoneSupport.swiftmodule"
 - "/usr/lib/swift/linux/x86_64/glibc.modulemap"
-interface-hash: "f329fd3980430c18226e1c412577a19c"
+interface-hash: "2192d9f81cd58f268aba54075b931689"
