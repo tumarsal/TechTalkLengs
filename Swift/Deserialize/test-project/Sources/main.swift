@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft Corporation. All rights reserved.
  * Licensed under the MIT License. See https://go.microsoft.com/fwlink/?linkid=2090316 for license information.
  *-------------------------------------------------------------------------------------------------------------*/
-
+import Foundation
 extension Date{
     func printDiff() {
         let microseconds = Date().long - self.long
@@ -25,6 +25,21 @@ extension Date{
             let result = Int64(long) * 1000 + Int64(long.truncatingRemainder(dividingBy: 1.0) * 1000.0)
             return result
         }
+    }
+}
+public struct Person: Codable {
+  var id: Int
+  var name: String
+  var phones: [String]
+    init(id: Int, name: String, phones: [String]) {
+        self.id = id
+        self.name = name
+        self.phones = phones
+    }
+    init() {
+        self.id = 1
+        self.name = "Artur"
+        self.phones = ["+793752229746","+79083402783"]
     }
 }
 class Serialize{
@@ -66,7 +81,7 @@ func main() {
     let person = Person()
     if let log = ser.serialize(person){
         print(log)
-        let person2 = ser.deserealize(string: log)
+        let person2 = ser.deserealize( log)
         print(person2)
     }
     

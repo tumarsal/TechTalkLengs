@@ -1,5 +1,0 @@
-version: "Swift version 4.2.4 (swift-4.2.4-RELEASE)"
-options: "d9ea1b07fcd0382395fd43561fd61481"
-build_time: [1570116521, 335570700]
-inputs:
-  "/workspaces/TechTalkLengs/Swift/Deserialize/test-project/Sources/main.swift": [1570116404, 0]
