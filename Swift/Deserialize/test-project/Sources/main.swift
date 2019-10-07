@@ -27,6 +27,7 @@ extension Date{
         }
     }
 }
+
 public struct Person: Codable {
   var id: Int
   var name: String
@@ -74,9 +75,40 @@ class Serialize{
  
     
 }
+func StringFromFile(path:String)-> String?{
+    var text:String? = nil
+    let fm = FileManager.default
+    let currentDirectoryPath = FileManager.default.currentDirectoryPath
+    print(currentDirectoryPath)
+    
+    let dir = URL.init(fileURLWithPath: "/workspaces/TechTalk/Swift/Deserialize/test-project/")
+    
+    let fileURL = dir.appendingPathComponent(path)
+    //reading
+    do {
+        text = try String(contentsOf: fileURL, encoding: .utf8)
+    }
+    catch {/* error handling here */}
 
+    return text
+}
+func StringToFile(path:String,content:String){
+    let dir = URL.init(fileURLWithPath: "/workspaces/TechTalk/Swift/Deserialize/test-project/")
+    let fileURL = dir.appendingPathComponent(path)
+        //writing
+    do {
+        try content.write(to: fileURL, atomically: false, encoding: .utf8)
+    }
+    catch {/* error handling here */}
+
+     
+
+}
 
 func main() {
+    let text = StringFromFile(path:"./input.json")
+    StringToFile(path:"./output.json",content: text as! String)
+    print(text)
     let ser = Serialize()
     let person = Person()
     if let log = ser.serialize(person){

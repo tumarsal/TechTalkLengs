@@ -2,7 +2,45 @@
  * Copyright (c) Microsoft Corporation. All rights reserved.
  * Licensed under the MIT License. See https://go.microsoft.com/fwlink/?linkid=2090316 for license information.
  *-------------------------------------------------------------------------------------------------------------*/
+import Foundation
+struct FailableDecodable<Base : Decodable> : Decodable {
 
+    let base: Base?
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        self.base = try? container.decode(Base.self)
+    }
+}
+struct FailableCodableArray<Element : Codable> : Codable {
+
+    var elements: [Element]
+
+    init(from decoder: Decoder) throws {
+
+        var container = try decoder.unkeyedContainer()
+
+        var elements = [Element]()
+        if let count = container.count {
+            elements.reserveCapacity(count)
+        }
+
+        while !container.isAtEnd {
+            if let element = try container
+                .decode(FailableDecodable<Element>.self).base {
+
+                elements.append(element)
+            }
+        }
+
+        self.elements = elements
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.singleValueContainer()
+        try container.encode(elements)
+    }
+}
 extension Date{
     func printDiff() {
         let microseconds = Date().long - self.long
@@ -28,6 +66,39 @@ extension Date{
     }
 }
 
+
+
+func StringFromFile(path:String)-> String?{
+    var text:String? = nil
+    let fm = FileManager.default
+    let currentDirectoryPath = FileManager.default.currentDirectoryPath
+    print(currentDirectoryPath)
+    print("Hello:")
+    let dir = URL.init(fileURLWithPath: currentDirectoryPath)
+    
+    let fileURL = dir.appendingPathComponent(path)
+    print(fileURL)
+    //reading
+    do {
+        text = try String(contentsOf: fileURL, encoding: .utf8)
+    }
+    catch {/* error handling here */}
+
+    return text
+}
+func StringToFile(path:String,content:String){
+    let currentDirectoryPath = FileManager.default.currentDirectoryPath
+    let dir = URL.init(fileURLWithPath: currentDirectoryPath)
+    let fileURL = dir.appendingPathComponent(path)
+        //writing
+    do {
+        try content.write(to: fileURL, atomically: false, encoding: .utf8)
+    }
+    catch {/* error handling here */}
+
+     
+
+}
 
 class Sorts{
     func BubbleSort( array:inout [Int])->[Int]{
@@ -129,8 +200,15 @@ class HeapSort{
         }
     }
 }
-
 func main() {
+    let text = StringFromFile(path:"./input.json")
+    let products = JSONDecoder()
+    .decode(FailableCodableArray<Int>.self, from: text)
+    .elements
+    print(products)
+    StringToFile(path:"./output.json",content: text as! String)
+    print(text)
+    
     
 }
 
