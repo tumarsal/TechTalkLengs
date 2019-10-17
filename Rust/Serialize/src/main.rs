@@ -72,7 +72,7 @@ fn main() {
            println!("Error: {:?}", e);
        }
    }
-   let now2 = SystemTime::now();
+    let now2 = SystemTime::now();
     let outString: String = serde_json::to_string(&persons2).expect("error from string");
 
      match now2.elapsed() {

@@ -1,3 +1,23 @@
+use std::time::{Duration, SystemTime};
+
+use rand::distributions::{Distribution, Uniform};
+use serde_json::Result;
+use serde_json::Value;
+use serde_json::json;
+use std::fs::File;
+use std::io;
+use std::os;
+use std::fs;
+use std::io::prelude::*;
+fn print_duration(elapsed: Duration,iterations:u128){
+    let itf = iterations as f32;
+    let secs = elapsed.as_secs() as f32;
+    let millis = elapsed.as_millis() as f32;
+    println!("Secs {}", secs / itf);
+    println!("Millis {}", millis / itf);
+    println!("Micros {}", elapsed.as_micros()  / u128::from(iterations));
+    println!("Nanos {}", elapsed.as_nanos() / u128::from(iterations));
+}
 // bubble_sort
 fn bubble_sort(numbers: &Vec<i64>) -> Vec<i64> {
     let mut target = numbers.clone();
@@ -85,13 +105,35 @@ where
     }
 }
 
+fn gen () {
+    let mut vec:Vec<i32> = vec![0;1000];
+    let mut rng = rand::thread_rng();
+    let die = Uniform::from(1..1000);
+    
+    for i in 0..1000 {
+        vec[i] = die.sample(&mut rng);
+    }
+    println!("{:?}",vec);
+    let out_string: String = serde_json::to_string(&vec).expect("error from string");
+    let outpath = "./output.json";
+    let mut outfile = File::create(outpath).expect("error from string");
+    outfile.write_all(out_string.as_bytes()).expect("error from string");
+    outfile.sync_all().expect("write to file");
+}
 
-fn main()
+fn main(){
 
+    //gen();
+    let path = "./input.json";
+    let mut file = File::open(path).expect("Unable to open the file");
+    let mut contents = String::new();
+    file.read_to_string(&mut contents).expect("Unable to read the file");
+        
+    let mut vec: Vec<i64> = serde_json::from_str(&contents).expect("error from string");
     //bable sort
-    let mut vec:Vec<i64> = vec![1, 5, 10, 2, 15];
+    //let mut vec:Vec<i64> = vec![1, 5, 10, 2, 15];
     bubble_sort(&mut vec);
-    println!("{}",vec[0]);{
+    println!("{}",vec[0]);
     /*quick sort */
     let mut vector:Vec<i64> = vec![4, 6, 8, 1, 0, 3, 2, 2, 9, 5];
     //heap_sort(&mut v, |x, y| x < y);
